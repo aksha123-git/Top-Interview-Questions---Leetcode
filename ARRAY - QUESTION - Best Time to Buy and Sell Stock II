@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int mx = 0;
+        int n = prices.size();
+        for(int i = 1 ; i<= n; i++){
+            while(i < n && prices[i] >= prices[i-1]){
+                mx += (prices[i] - prices[i-1]);
+                i++;
+            }
+        }
+        return mx;
+        
+    }
+};
